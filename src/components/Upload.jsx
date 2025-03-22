@@ -29,18 +29,21 @@ export default function Upload({ onTranscription }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <label className="flex items-center justify-center w-72 h-40 border-2 border-dashed border-blue-400 rounded-xl cursor-pointer hover:bg-white/10 transition">
+      {/* Upload Area */}
+      <label className="flex items-center justify-center w-72 h-40 border-2 border-dashed border-black rounded-xl cursor-pointer hover:bg-white/10 transition">
         <input type="file" accept="audio/*" onChange={handleFileChange} hidden />
         <div className="flex flex-col items-center">
-          <UploadCloud size={48} className="text-blue-400 mb-2" />
-          <p className="text-gray-300">Click to upload an audio file</p>
+          <UploadCloud size={48} className="text-black mb-2" />
+          <p className="text-black font-semibold">Click to upload an audio file</p>
         </div>
       </label>
 
+      {/* Display selected file name */}
       {file && (
         <p className="text-gray-300 text-sm italic">Selected: {file.name}</p>
       )}
 
+      {/* Upload Button */}
       <motion.button
         onClick={handleUpload}
         className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all"
